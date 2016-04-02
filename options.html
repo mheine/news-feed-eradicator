@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Test Extension Options</title>
+	<style>
+		body: { padding: 10px; }
+	</style>
+</head>
+
+<body>
+	You can choose a specfic time during which your Facebook feed will be eradicated.
+	<br><br>
+	The default is to always have it on.
+	<br><br>
+
+	<form id="form-id">
+		<input id="hide-time" name="test" type="radio" checked /> Always on (Default)<br />
+		<input id="show-time" name="test" type="radio" /> Specific time<br />
+	</form>
+
+	<div id="time-div" style="display: none;">
+		<br>
+		Eradicate news feed between
+		<input type="text" id="starttime" placeholder="08:00" size="5">
+		&nbsp;and&nbsp;
+		<input type="text" id="endtime" placeholder="17:00" size="5"><br>
+		
+	</div>
+	
+
+	<br>
+	<div id="status"></div>
+	<button id="save">Save</button>
+
+	<script src="options.js"></script>
+
+</body>
+</html>

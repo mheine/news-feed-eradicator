@@ -13,6 +13,10 @@
 		"48": "icon48.jpg",
 		"128": "icon128.jpg"
 	},
+	"options_ui": {
+    	"page": "options.html",
+    	"chrome_style": true
+  },
 	"content_scripts": [
 		{
 			"matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
