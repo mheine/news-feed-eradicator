@@ -62,7 +62,7 @@ var InfoPanel = React.createClass({
 				<h2>Remove</h2>
 				<ul>
 					<li>
-						<a href="http://news-feed-eradicator.west.io/remove.html">Removal instructions /	Instrucciones de eliminación</a>
+						<a href="http://news-feed-eradicator.west.io/remove.html">Removal instructions</a>
 					</li>
 				</ul>
 			</div>
