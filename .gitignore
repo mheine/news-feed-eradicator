@@ -2,6 +2,7 @@
 .*.swp
 *.zip
 .idea/*
+.vscode
 local/*
 
 dump.rdb
@@ -12,3 +13,4 @@ browsers/firefox/news-feed-eradicator.xpi
 
 dist
 build
+typings

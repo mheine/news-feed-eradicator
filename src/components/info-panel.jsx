@@ -1,15 +1,13 @@
 var React = require('react');
 
-var Store = require( '../store.js' );
-
 var PlusOneButton = require( './gplus-one-button.jsx' ),
-	FacebookLikeButton = require( './facebook-like-button.jsx' );
+	FacebookLikeButton = require( './facebook-like-button.jsx' ),
+	Settings = require( './settings' ).default;
+
+import { toggleShowQuotes, hideInfoPanel, resetHiddenQuotes } from '../store/actions';
+import { connect } from 'react-redux';
 
 var InfoPanel = React.createClass({
-	onChangeShowQuotes: function( e ) {
-		Store.setSetting( 'showQuotes', e.target.checked );
-	},
-
 	render: function() {
 		return (
 			<div className='nfe-info-panel'>
@@ -18,17 +16,12 @@ var InfoPanel = React.createClass({
 				<a href="#"
 					title="Close information panel"
 					className="nfe-close-button"
-					onClick={ this.props.onClose }>X</a>
+					onClick={ this.props.hideInfoPanel }>X</a>
 
 				<hr/>
 				<h2>Settings</h2>
 
-				<label>
-				<input type="checkbox"
-					checked={ this.props.settings.get( 'showQuotes' ) }
-					onChange={ this.onChangeShowQuotes } />
-				Show Quotes
-				</label>
+				<Settings />
 
 				<hr/>
 
@@ -71,4 +64,10 @@ var InfoPanel = React.createClass({
 	}
 });
 
-module.exports = InfoPanel;
+const mapStateToProps = ( state ) => ( {} );
+
+const mapDispatchToProps = ( dispatch ) => ( {
+	hideInfoPanel: () => dispatch( hideInfoPanel() ),
+} );
+
+module.exports = connect( mapStateToProps, mapDispatchToProps )( InfoPanel );
